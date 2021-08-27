@@ -47,10 +47,11 @@ input {
 }
 
 .photo-card {
-  flex-basis: calc(100% / 4 - 15px);
+  flex-basis: calc(100% / 6 - 15px);
   margin-left: 15px;
   margin-top: 15px;
-  height: 700px;
+  height: 600px;
+  outline: 1px rgb(88, 86, 86) solid;
 }
 
 .stats {
