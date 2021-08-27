@@ -76,14 +76,13 @@ input {
 .btn {
   min-width: 200px;
   padding: 20px 40px;
-  font-family: inherit;
   font-weight: 500;
   font-size: 50px;
-  letter-spacing: 0.06em;
   color: #000;
-  background-color: rgb(197, 197, 206);
-  border: none;
-  border-radius: 30px;
+  background-color: transparent;
+  border: 2px #000 solid;
+  border-left: none;
+  border-right: none;
   cursor: pointer;
 }
 

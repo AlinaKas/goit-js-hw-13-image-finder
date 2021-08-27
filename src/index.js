@@ -6,8 +6,7 @@ import LoadMoreBtn from './js/load-more-btn.js';
 
 import { error } from '../node_modules/@pnotify/core/dist/PNotify';
 // import * as basicLightbox from 'basiclightbox';
-import '../node_modules/basicLightbox/dist/basicLightbox.min.css';
-
+// import '../node_modules/basicLightbox/dist/basicLightbox.min.css';
 
 const refs = getRefs();
 
@@ -27,7 +26,8 @@ function onSearch(e) {
     newsApiService.query = e.currentTarget.elements.query.value;
 
     if (newsApiService.query === '') {
-        return onFetchError();
+        onFetchError()
+        return;
     }
 
     loadMoreBtn.show();
