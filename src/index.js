@@ -42,37 +42,39 @@ function onSearch(e) {
 
 function fetchImages() {
     loadMoreBtn.disable();
-    newsApiService.fetchImages().then(hits => {
-            renderCardsMarkup(hits);
-            loadMoreBtn.enable();
-        })
-        .catch(onFetchError);
+    newsApiService.fetchImages().then(imgs => {
+        if (imgs.length === 0) {
+            onFetchError();
+            return;
+        };
+        renderCardsMarkup(imgs);
+        loadMoreBtn.enable();
+    });
 };
 
 function onLoadMore() {
-fetchImages()
+    fetchImages();
 };
 
-function renderCardsMarkup(hits) {
-    refs.galleryContainer.insertAdjacentHTML('beforeend', cardTpl(hits));
-
-    // if (searchQuery.status === 404) {
-    //     refs.galleryContainer.innerHTML = '';
-    // onFetchError();
-    // return;
-    // }
+function renderCardsMarkup(imgs) {
+    refs.galleryContainer.insertAdjacentHTML('beforeend', cardTpl(imgs));
 };
 
 function clearGalleryContainer() {
-refs.galleryContainer.innerHTML = '';
+    refs.galleryContainer.innerHTML = '';
 };
 
-
+function clearInput() {
+    refs.searchForm.query.value = '';
+};
 
 function onFetchError() {
     error({
         title: 'INCORRECT REQUEST',
         text: 'Please enter a more specific query!',
         delay: 2000,
-  })
+    })
+    clearGalleryContainer();
+    loadMoreBtn.hide();
+     clearInput();
 };

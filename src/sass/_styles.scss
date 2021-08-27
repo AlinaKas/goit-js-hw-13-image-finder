@@ -75,15 +75,15 @@ input {
 }
 
 .btn {
-  min-width: 200px;
-  padding: 20px 40px;
+  margin: 20px;
+  min-width: 400px;
+  padding: 20px 30px;
   font-weight: 500;
   font-size: 50px;
   color: #000;
   background-color: transparent;
-  border: 2px #000 solid;
-  border-left: none;
-  border-right: none;
+  border: none;
+  border-top: 2px #000 solid;
   cursor: pointer;
 }
 
