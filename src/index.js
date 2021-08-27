@@ -26,7 +26,8 @@ function onSearch(e) {
     newsApiService.query = e.currentTarget.elements.query.value;
 
     if (newsApiService.query === '') {
-        onFetchError()
+        clearGalleryContainer();
+        onFetchError();
         return;
     }
 
@@ -35,15 +36,12 @@ function onSearch(e) {
     clearGalleryContainer();
     fetchImages();
 }
-//     e.target.query.value = '';
-//      if (!searchQuery) {
-//         return;
-//   }
 
 function fetchImages() {
     loadMoreBtn.disable();
     newsApiService.fetchImages().then(imgs => {
         if (imgs.length === 0) {
+            clearInput();
             onFetchError();
             return;
         };
@@ -74,7 +72,5 @@ function onFetchError() {
         text: 'Please enter a more specific query!',
         delay: 2000,
     })
-    clearGalleryContainer();
     loadMoreBtn.hide();
-     clearInput();
 };
