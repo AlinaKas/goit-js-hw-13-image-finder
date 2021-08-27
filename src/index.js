@@ -34,10 +34,10 @@ function onSearch(e) {
     loadMoreBtn.show();
     newsApiService.resetPage();
     clearGalleryContainer();
-    fetchImages();
+    onLoadMore();
 }
 
-function fetchImages() {
+function onLoadMore() {
     loadMoreBtn.disable();
     newsApiService.fetchImages().then(imgs => {
         if (imgs.length === 0) {
@@ -46,12 +46,9 @@ function fetchImages() {
             return;
         };
         renderCardsMarkup(imgs);
+        scrollToNewMarkup();
         loadMoreBtn.enable();
     });
-};
-
-function onLoadMore() {
-    fetchImages();
 };
 
 function renderCardsMarkup(imgs) {
@@ -73,4 +70,11 @@ function onFetchError() {
         delay: 2000,
     })
     loadMoreBtn.hide();
+};
+
+function scrollToNewMarkup() {
+        loadMoreBtn.refs.button.scrollIntoView({
+            block: 'start',
+            behavior: 'smooth',
+        });
 };
