@@ -8,7 +8,6 @@ import { error } from '../node_modules/@pnotify/core/dist/PNotify';
 // Модалка
 import * as basicLightbox from 'basiclightbox';
 import '../node_modules/basiclightbox/dist/basicLightbox.min.css';
-
 // Ccылки на ключевые элементы разметки
 const refs = getRefs();
 
@@ -25,7 +24,6 @@ const newsApiService = new NewsApiService();
 refs.searchForm.addEventListener('submit', onSearch);
 loadMoreBtn.refs.button.addEventListener('click', onLoadMore);
 refs.galleryContainer.addEventListener('click', openModal);
-
 
 // Поиск по запросу пользователя из инпута формы
 function onSearch(e) {
@@ -98,10 +96,7 @@ function openModal(e) {
     e.preventDefault();
     if (e.target.nodeName !== 'IMG') {
     return;
-  }
-      const instance = basicLightbox.create(
-          ` <img src=${e.target.dataset.source} width="" height="">`,
-      );
-      instance.show();
-}
+    };
+      basicLightbox.create(`<img src="${e.target.dataset.src}">`).show();
+};
 

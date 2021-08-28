@@ -6,7 +6,7 @@
 
 p {
   padding: 0;
-  margin: 15px;
+  margin: 5px;
 }
 
 body {
@@ -26,12 +26,12 @@ form {
 }
 
 input {
-  padding-left: 40px;
+  padding-left: 30px;
   padding-right: 15px;
-  margin-bottom: 35px;
-  font-size: 50px;
-  min-width: 400px;
-  height: 100px;
+  margin-bottom: 30px;
+  font-size: 30px;
+  min-width: 200px;
+  height: 60px;
   border-radius: 10px;
   outline-color: black;
   box-shadow: 2px 2px 2px rgb(68, 66, 66);
@@ -39,7 +39,8 @@ input {
 
 .container {
   margin: 0 auto;
-  padding: 30px;
+  max-width: 1280px;
+  padding: 20px;
 }
 
 .gallery {
@@ -50,16 +51,17 @@ input {
 }
 
 .gallery img {
-  height: 400px;
+  height: 200px;
   object-fit: cover;
   cursor: zoom-in;
 }
 
 .photo-card {
-  flex-basis: calc(100% / 4 - 30px);
+  flex-basis: calc(100% / 4 - 15px);
   margin-left: 15px;
   margin-top: 15px;
-  height: 550px;
+  // padding-bottom: 10px;
+  height: 280px;
   outline: 1px #585656 solid;
 }
 
@@ -68,7 +70,6 @@ input {
   flex-wrap: wrap;
   justify-content: space-around;
   margin-top: 5px;
-  font-size: 35px;
 }
 
 .stats-item {
@@ -76,22 +77,23 @@ input {
   align-items: center;
   cursor: default;
 }
+
 .material-icons {
   margin-right: 5px;
-  font-size: 50px;
   color: #9b9999;
 }
 
 .btn {
-  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
   min-width: 400px;
-  padding: 30px 30px;
   font-weight: 500;
-  font-size: 50px;
+  font-size: 30px;
   color: #000;
   background-color: transparent;
   border: none;
-  border-top: 2px #000 solid;
+  border-top: 1px #000 solid;
   cursor: pointer;
 }
 
