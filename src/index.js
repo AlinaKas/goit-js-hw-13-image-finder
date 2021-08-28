@@ -3,9 +3,9 @@ import cardTpl from './templates/card.hbs';
 import NewsApiService from './js/apiService';
 import getRefs from './js/getRefs'
 import LoadMoreBtn from './js/load-more-btn.js';
-
+// Оповещение
 import { error } from '../node_modules/@pnotify/core/dist/PNotify';
-
+// Модалка
 import * as basicLightbox from 'basiclightbox';
 import '../node_modules/basiclightbox/dist/basicLightbox.min.css';
 
@@ -88,10 +88,11 @@ function onFetchError() {
 // Скролл при загрузке новых картинок
 function scrollToNewMarkup() {
         loadMoreBtn.refs.button.scrollIntoView({
-            block: 'start',
+            block: 'end',
             behavior: 'smooth',
         });
 };
+
 // Модалка с большой картинкой
 function openModal(e) {
   e.preventDefault();

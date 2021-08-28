@@ -88,10 +88,6 @@ input {
   cursor: pointer;
 }
 
-// .is-hidden {
-//   display: none;
-// }
-
 .button {
   display: block;
   margin-left: auto;
@@ -105,11 +101,3 @@ input {
 .button > .spinner.is-hidden {
   display: none;
 }
-
-// .example .background {
-//   height: 240px;
-//   // Путь к изображениям из SASS-файла всегда такой, как из папки css
-//   background-image: url('../images/demo.jpg');
-//   background-size: cover;
-//   background-position: center;
-// }
