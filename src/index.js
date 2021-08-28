@@ -95,12 +95,13 @@ function scrollToNewMarkup() {
 
 // Модалка с картинкой
 function openModal(e) {
-  e.preventDefault();
-  if (e.target.nodeName === 'IMG') {
+    e.preventDefault();
+    if (e.target.nodeName !== 'IMG') {
+    return;
+  }
       const instance = basicLightbox.create(
           ` <img src=${e.target.dataset.source} width="" height="">`,
       );
       instance.show();
-  }
 }
 
