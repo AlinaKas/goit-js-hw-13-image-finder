@@ -9,7 +9,6 @@ import { error } from '../node_modules/@pnotify/core/dist/PNotify';
 import * as basicLightbox from 'basiclightbox';
 import '../node_modules/basicLightbox/dist/basicLightbox.min.css';
 
-
 // Ccылки на ключевые элементы разметки
 const refs = getRefs();
 
