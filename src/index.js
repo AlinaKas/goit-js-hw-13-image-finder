@@ -101,8 +101,6 @@ function openModal(e) {
           ` <img src=${e.target.dataset.source} width="" height="">`,
       );
       instance.show();
-
-      console.log(e.target.dataset.source);
   }
 }
 
