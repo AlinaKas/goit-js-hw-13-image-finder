@@ -78,7 +78,7 @@ function clearInput() {
 // Оповещение про ошибку
 function onFetchError() {
     error({
-        title: 'INCORRECT REQUEST',
+        title: 'IMAGES NOT FOUND.',
         text: 'Please enter a more specific query!',
         delay: 2000,
     })
@@ -93,13 +93,16 @@ function scrollToNewMarkup() {
         });
 };
 
-// Модалка с большой картинкой
+// Модалка с картинкой
 function openModal(e) {
   e.preventDefault();
   if (e.target.nodeName === 'IMG') {
       const instance = basicLightbox.create(
-          ` <img src=${e.target.getAttribute('data-src')} width="" height="">`,
+          ` <img src=${e.target.dataset.source} width="" height="">`,
       );
       instance.show();
+
+      console.log(e.target.dataset.source);
   }
 }
+
