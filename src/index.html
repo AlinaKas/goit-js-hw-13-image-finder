@@ -11,23 +11,28 @@
       crossorigin="anonymous"
     />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
       <link rel="stylesheet" href="../node_modules/@pnotify/core/dist/PNotify.css">
       <link rel="stylesheet" href="../node_modules/@pnotify/core/BrightTheme.css">
   </head>
   <body>
     <div class="container">
+      <h1 class="title animate__animated animate__fadeInDown">Search for images of ...</h1>
 <!-- Форма поискового запроса -->
     <form class="search-form" id="search-form">
-      <input type="text" name="query" autocomplete="off" placeholder="Search images..." />
+      <input type="text" name="query" autocomplete="off" placeholder="type your search request" />
+      <button type="submit" class="btn-search button">&#128269;</button>
     </form>
  <!-- Разметка карточек -->
     <ul class="gallery">
     </ul>
 <!-- Кнопка дальнейшей загрузки картинок -->
-    <button type="button" class="btn button" data-action="load-more">
+    <button type="button" class="btn-load button" data-action="load-more">
       <span class="spinner is-hidden" role="status" aria-hidden="true"></span>
       <span class="label">Load more</span>
     </button>
+<!-- Кнопка для скролла вверх -->
+<button type="button" class="button btn-top">&#8679;</button>
     </div>
   <!-- Скрипты  -->
     <script src="./index.js"></script>
