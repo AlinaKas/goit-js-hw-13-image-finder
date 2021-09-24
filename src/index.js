@@ -8,6 +8,8 @@ import { error } from '../node_modules/@pnotify/core/dist/PNotify';
 // Модалка
 import * as basicLightbox from 'basiclightbox';
 import '../node_modules/basiclightbox/dist/basicLightbox.min.css';
+//Иконки
+// import '../node_modules/material-design-icons/iconfont/material-icons.css';
 // Ccылки на ключевые элементы разметки
 const refs = getRefs();
 
@@ -24,12 +26,14 @@ const newsApiService = new NewsApiService();
 refs.searchForm.addEventListener('submit', onSearch);
 loadMoreBtn.refs.button.addEventListener('click', onLoadMore);
 refs.galleryContainer.addEventListener('click', openModal);
+refs.topBtn.addEventListener('click', goToTop);
+window.addEventListener('scroll', scrollTop);
 
 // Поиск по запросу пользователя из инпута формы
 function onSearch(e) {
     e.preventDefault();
 
-    newsApiService.query = e.currentTarget.elements.query.value;
+    newsApiService.query = e.currentTarget.elements.query.value.trim();
 
     if (newsApiService.query === '') {
         clearGalleryContainer();
@@ -90,6 +94,22 @@ function scrollToNewMarkup() {
             behavior: 'smooth',
         });
 };
+
+// Скролл вверх
+function goToTop() {
+  document.documentElement.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+}
+
+function scrollTop() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    refs.topBtn.style.display = 'block';
+  } else {
+    refs.topBtn.style.display = 'none';
+  }
+}
 
 // Модалка с картинкой
 function openModal(e) {
