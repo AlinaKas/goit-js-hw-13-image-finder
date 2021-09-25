@@ -26,7 +26,7 @@ const newsApiService = new NewsApiService();
 refs.searchForm.addEventListener('submit', onSearch);
 loadMoreBtn.refs.button.addEventListener('click', onLoadMore);
 refs.galleryContainer.addEventListener('click', openModal);
-refs.topBtn.addEventListener('click', goToTop);
+refs.topBtn.addEventListener('click', backToTop);
 window.addEventListener('scroll', scrollTop);
 
 // Поиск по запросу пользователя из инпута формы
@@ -96,20 +96,39 @@ function scrollToNewMarkup() {
 };
 
 // Скролл вверх
-function goToTop() {
-  document.documentElement.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  });
-}
+// function goToTop() {
+//   document.documentElement.scrollTo({
+//     top: 0,
+//     behavior: 'smooth',
+//   });
+// }
+
+  // if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  //   refs.topBtn.style.display = 'block';
+  // } else {
+  //   refs.topBtn.style.display = 'none';
+  // }
+
+
 
 function scrollTop() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     refs.topBtn.style.display = 'block';
   } else {
     refs.topBtn.style.display = 'none';
   }
 }
+
+function  backToTop() {
+  if (window.pageYOffset > 0) {
+    window.scrollBy(0, -80);
+    setTimeout(backToTop, 15);
+  refs.topBtn.style.display = 'block';
+  } else {
+    refs.topBtn.style.display = 'none';
+  }
+}
+
 
 // Модалка с картинкой
 function openModal(e) {
