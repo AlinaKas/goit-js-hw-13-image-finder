@@ -96,21 +96,6 @@ function scrollToNewMarkup() {
 };
 
 // Скролл вверх
-// function goToTop() {
-//   document.documentElement.scrollTo({
-//     top: 0,
-//     behavior: 'smooth',
-//   });
-// }
-
-  // if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-  //   refs.topBtn.style.display = 'block';
-  // } else {
-  //   refs.topBtn.style.display = 'none';
-  // }
-
-
-
 function scrollTop() {
    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     refs.topBtn.style.display = 'block';
